@@ -1,7 +1,10 @@
 require 'pry'
 
 def prime?(number)
-  array = (1..number.abs()).to_a
+  if number < 0 
+    return false
+  end
+  array = (1..number).to_a
   array.each_with_index do |i|
     remainder = number % i 
     if remainder == 0 && i != number && i != 1
